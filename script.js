@@ -16,24 +16,67 @@ document.querySelectorAll('.tab-link').forEach(link => {
   });
 });
 
-// Generic sub-tab switching
-function showSubTab(section, event, sectionClass, tabClass) {
-  document.querySelectorAll(sectionClass).forEach(sec => sec.classList.remove('active'));
-  document.getElementById(section).classList.add('active');
-  document.querySelectorAll(tabClass + ' button').forEach(btn => btn.classList.remove('active'));
-  event.target.classList.add('active');
-}
+// Ensure Home is active by default
+  window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('home').classList.add('active');
+    document.querySelector('.tab-link[href="#home"]').classList.add('active');
+  });
 
-// Projects
-function showProject(section, event) {
-  showSubTab(section, event, '.project-section', '.project-tabs');
-}
+ //Show section by id and group class
+  function showSection(sectionId, groupClass, event) {
+    event.preventDefault();
 
-// Resume
-function showResume(section, event) {
-  showSubTab(section, event, '.resume-section', '.resume-tabs');
-}
+    // Hide all in the group
+    document.querySelectorAll('.' + groupClass).forEach(sec => sec.classList.remove('active'));
+    // Show selected
+    document.getElementById(sectionId).classList.add('active');
 
+    // Collapse any open dropdown after click
+    const dropdownContent = event.target.closest('.dropdown-content');
+    if (dropdownContent) {
+      dropdownContent.style.display = 'none';
+    }
+
+    // If it's a main tab (tab-content), update active link
+    if (groupClass === 'tab-content') {
+      document.querySelectorAll('.tab-link').forEach(link => link.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+  }
+
+  // Handle parent dropdown clicks → show default tab
+  document.addEventListener('DOMContentLoaded', () => {
+    // Default Home active
+    document.getElementById('home').classList.add('active');
+    document.querySelector('.tab-link[href="#home"]').classList.add('active');
+
+    // Attach listeners to parent dropdown anchors
+    document.querySelectorAll('.dropdown > .tab-link').forEach(parentLink => {
+      parentLink.addEventListener('click', e => {
+        e.preventDefault();
+
+        // Decide default section per dropdown
+        const id = parentLink.getAttribute('href').replace('#','');
+        let defaultSection = null;
+        let groupClass = null;
+
+        if (id === 'projects') {
+          defaultSection = 'web-projects';   // your chosen default
+          groupClass = 'project-section';
+        } else if (id === 'resume') {
+          defaultSection = 'education';      // default for resume
+          groupClass = 'resume-section';
+        } else if (id === 'code-samples') {
+          defaultSection = 'MentalHealth';   // default for code samples
+          groupClass = 'code-section';
+        }
+
+        if (defaultSection && groupClass) {
+          showSection(defaultSection, groupClass, e);
+        }
+      });
+    });
+  });
 // Load R code dynamically
 fetch("https://raw.githubusercontent.com/JUMA22-RT/DATA-SCIENCE/main/Mental%20Health%20Risk.R")
     .then(response => response.text())
@@ -81,3 +124,4 @@ function showSection(sectionId, groupClass, event) {
     event.target.classList.add("active");
   }
 }
+

@@ -258,11 +258,149 @@ main section.active {
   border-radius: 8px;
 }
 
+/* Welcome section under Home tab */
+.welcome-section {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #1a73e8; /* bold background strip */
+  color: #fff;         /* white text */
+}
+
+.welcome-section h1 {
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.welcome-section p {
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto; /* keeps text centered */
+}
+
+/* Landing container with text + infographic */
+.landing-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.landing-text {
+  flex: 1.2;            /* smaller share of space compared to visuals */
+  max-width: 600px;     /* limit text width */
+}
+
+.landing-visuals {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-visuals img {
+  width: 600px;        /* increase width */
+  height: 600px;       /* increase height */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
 .about-text {
   flex: 1;
   border-top: 4px solid #1a73e8; /* stripe on text container */
   padding-top: 0rem;
 }
+
+.skills-diagram-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.diagram-left img {
+  width: 480px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.diagram-right {
+  flex: 1;
+}
+
+.diagram-right h2 {
+  margin-bottom: 1rem;
+  color: #1a73e8;
+}
+
+.diagram-right p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* MEAL Section Styling */
+.skills-diagram-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 60px 0;
+  gap: 40px;
+  background-color: #f9fbfd; /* subtle background */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Left text block */
+.skills-diagram-container .diagram-left {
+  flex: 1;
+  padding: 20px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.skills-diagram-container .diagram-left h2 {
+  border-left: 6px solid #00796b; /* teal accent */
+  padding-left: 12px;
+  color: #00796b;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.skills-diagram-container .diagram-left p {
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+/* Right infographic block */
+.skills-diagram-container .diagram-right {
+  flex: 1;
+  text-align: center;
+}
+
+.skills-diagram-container .diagram-right img {
+  max-width: 65%;   /* reduced size for balance */
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Banner text */
+.skills-diagram-container h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #00796b;
+  font-weight: 600;
+}
+
+.skills-diagram-container p {
+  font-size: 15px;
+  color: #555;
+}
+
 /* ---------------- ANIMATION ---------------- */
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -316,17 +454,17 @@ main section.active {
   .education-container {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    text-align: justify;
   }
 
   .resume-details {
     width: 100%;
-    align-items: center;
+    align-items: justify;
   }
 
   .resume-box {
     width: 100%;
-    text-align: left;
+    text-align: justify;
   }
 
   .resume-photo img {
@@ -335,7 +473,7 @@ main section.active {
 
   .about-container {
     flex-direction: column;   /* stack vertically */
-    text-align: center;
+    text-align: justify;
   }
 
   .about-photo {
@@ -343,12 +481,54 @@ main section.active {
   }
 
   .about-text {
-    text-align: left;         /* keep text aligned left */
+    text-align: justify;         /* keep text aligned left */
   }
 
   .skills-container {
     flex-direction: column;   /* stack vertically */
   }
+
+  .landing-container {
+    flex-direction: column;
+    text-align: justify;
+  }
+
+  .landing-visuals {
+    margin-top: 2rem;
+  }
+  .landing-visuals img {
+    max-width: 100%;
+  }
+
+  .skills-diagram-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .diagram-left img {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .skills-diagram-container.meal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-diagram-container.meal .diagram-left,
+  .skills-diagram-container.meal .diagram-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .skills-diagram-container.meal .diagram-left h2 {
+    border-left: none;
+    border-top: 4px solid #00796b;
+    padding-top: 10px;
+    padding-left: 0;
+  }
+
 }
 
 
