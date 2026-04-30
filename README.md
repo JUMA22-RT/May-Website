@@ -35,8 +35,8 @@ A detailed version of my resume is available here for download.
 ---
 
 ## 📬 Contact
-- Email: **mauriceojuma2017@gmail.com**  
-- LinkedIn: *(www.linkedin.com/in/mouricejuma)*  
-- Portfolio Website: *(https://juma22-rt.github.io/My-Website/)*  
+[Email](mauriceojuma2017@gmail.com)  
+[LinkedIn](www.linkedin.com/in/mouricejuma)  
+[Portfolio Website](https://juma22-rt.github.io/My-Website/)  
 
 
