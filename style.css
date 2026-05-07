@@ -120,12 +120,17 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 99999  !important;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
   border-top: 0.5px solid #3a0584;
   width: 100%;              /* ensure it fits viewport */
   max-width: 100vw;         /* prevent overflow */
   overflow-x: hidden;       /* block sideways scroll */
+}
+
+
+.footer-right a {
+  pointer-events: auto;
 }
 
 footer a {
@@ -135,6 +140,19 @@ footer a {
   align-items: center;
   gap: 6px;
   transition: all 0.3s ease;
+}
+
+.footer-right a {
+  pointer-events: auto;
+  position: relative;
+  z-index: 10;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer-right {
+  position: relative;
+  z-index: 10;
 }
 
 footer a:hover {
@@ -210,7 +228,7 @@ footer > div {
   footer > div {
     flex-direction: column;   /* stack items */
     gap: 10px;
-    width: 97%;              /* fit screen */
+    width: 98%;              /* fit screen */
     text-align: center;
   }
 
@@ -1611,6 +1629,5 @@ pre {
 .title, .subtitle, .author, .date {
   text-align: center;
 }
-
 
 

@@ -243,10 +243,14 @@ fetch("https://raw.githubusercontent.com/JUMA22-RT/DATA-SCIENCE/main/Mental%20He
   });
 
 
-document.querySelectorAll('a').forEach(link => {
+document.querySelectorAll('nav a').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    window.scrollTo(0, 0);
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   });
 });
 
