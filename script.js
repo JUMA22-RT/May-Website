@@ -43,6 +43,23 @@ document.querySelectorAll('nav > .tab-link').forEach(link => {
   }
 });
 
+// Close nav when cursor leaves navbar
+nav.addEventListener("mouseleave", function() {
+
+  if (window.innerWidth <= 768) {
+
+    nav.classList.remove("active");
+
+    document.querySelectorAll(".dropdown").forEach(drop => {
+      drop.classList.remove("active");
+    });
+
+  }
+
+});
+
+
+
 // Parent links in dropdowns
 document.querySelectorAll('.dropdown > .tab-link').forEach(parentLink => {
   parentLink.addEventListener('click', function(e) {
@@ -225,6 +242,14 @@ fetch("https://raw.githubusercontent.com/JUMA22-RT/DATA-SCIENCE/main/Mental%20He
     Prism.highlightAll();
   });
 
+
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo(0, 0);
+  });
+});
+
 fetch("https://raw.githubusercontent.com/JUMA22-RT/DATA-SCIENCE/main/Smartphone%20Addiction.R")
   .then(r => r.text())
   .then(data => {
@@ -282,3 +307,35 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(card);
   });
 });
+
+function showHTML1() {
+    document.getElementById("htmlFrame1").style.display = "block";
+    document.getElementById("pdfFrame1").style.display = "none";
+    document.getElementById("slidesFrame1").style.display = "none";
+  }
+  function showPDF1() {
+    document.getElementById("htmlFrame1").style.display = "none";
+    document.getElementById("pdfFrame1").style.display = "block";
+    document.getElementById("slidesFrame1").style.display = "none";
+  }
+  function showSlides1() {
+    document.getElementById("htmlFrame1").style.display = "none";
+    document.getElementById("pdfFrame1").style.display = "none";
+    document.getElementById("slidesFrame1").style.display = "block";
+  }
+
+  function showHTML2() {
+    document.getElementById("htmlFrame2").style.display = "block";
+    document.getElementById("pdfFrame2").style.display = "none";
+    document.getElementById("slidesFrame2").style.display = "none";
+  }
+  function showPDF2() {
+    document.getElementById("htmlFrame2").style.display = "none";
+    document.getElementById("pdfFrame2").style.display = "block";
+    document.getElementById("slidesFrame2").style.display = "none";
+  }
+  function showSlides2() {
+    document.getElementById("htmlFrame2").style.display = "none";
+    document.getElementById("pdfFrame2").style.display = "none";
+    document.getElementById("slidesFrame2").style.display = "block";
+  }
