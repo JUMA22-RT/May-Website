@@ -210,7 +210,7 @@ footer > div {
   footer > div {
     flex-direction: column;   /* stack items */
     gap: 10px;
-    width: 100%;              /* fit screen */
+    width: 97%;              /* fit screen */
     text-align: center;
   }
 
