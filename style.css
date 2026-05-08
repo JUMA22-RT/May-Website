@@ -363,7 +363,7 @@ main section.active {
 #experience .experience-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  gap: 20px;
   margin-bottom: 15px;
 }
 
