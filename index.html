@@ -2127,7 +2127,16 @@ erd.render('MoPhones_ERD')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
 <script src="script.js"></script>
 
-
+<script>
+  if (localStorage.getItem("visitCount")) {
+    let count = parseInt(localStorage.getItem("visitCount")) + 1;
+    localStorage.setItem("visitCount", count);
+    document.write("You have visited this page " + count + " times.");
+  } else {
+    localStorage.setItem("visitCount", 1);
+    document.write("This is your first visit!");
+  }
+</script>
 
 </body>
 </html>
