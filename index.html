@@ -2131,10 +2131,10 @@ erd.render('MoPhones_ERD')
   if (localStorage.getItem("visitCount")) {
     let count = parseInt(localStorage.getItem("visitCount")) + 1;
     localStorage.setItem("visitCount", count);
-    document.write("You have visited this page " + count + " times.");
+    document.write("This page have been visited " + count + " times.");
   } else {
     localStorage.setItem("visitCount", 1);
-    document.write("This is your first visit!");
+    document.write("This is the first visit!");
   }
 </script>
 
